@@ -56,7 +56,7 @@ router.get("/secretclub", (req, res) => {
       //if no err, user valid, can continue 
       User.findByPk(data.id).then(userData=>{
           console.log(userData.get({plain:true}));
-          res.send(`Welcome to the club, ${userData.email}!`)
+          res.json({msg:`Welcome to the club, ${userData.email}!`})
       })
     }
   });
