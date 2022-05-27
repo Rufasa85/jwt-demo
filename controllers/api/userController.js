@@ -16,7 +16,17 @@ router.post("/login", (req, res) => {
               //data to include.  NOTE: jwts are encoded, not encrypted.  Meaning, the can easily be decoded.  Dont put sensitive data in here
               {
                 email: dbUser.email,
-                id: dbUser.id
+                id: dbUser.id,
+                tacos:[
+                  {
+                      shell:"soft",
+                      filling:"fish"
+                  },
+                  {
+                      shell:"hard",
+                      filling:"beef"
+                  }
+              ]
               },
               //secret string to verify signature.  should be an env variable for saftey
               process.env.JWT_SECRET,
